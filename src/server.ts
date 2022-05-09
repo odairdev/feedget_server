@@ -3,7 +3,7 @@ import cors from 'cors'
 import { routes } from './routes';
 
 const app = express()
-const port = process.env.PORT || 3333;
+const port = process.env.PORT;
 
 app.use(cors())
 
@@ -11,6 +11,6 @@ app.use(express.json())
 
 app.use(routes)
 
-app.listen(port, () => {
+app.listen(port || 3333, () => {
   console.log('Server is running on port ' + port)
 })
